@@ -118,6 +118,24 @@ final class GitHubAPIClientTests: XCTestCase {
         }
     }
 
+    // MARK: - エラーメッセージ
+
+    func testオフライン起因の通信エラーは未接続メッセージになる() {
+        let error = GitHubAPIError.network(URLError(.notConnectedToInternet))
+        XCTAssertEqual(
+            error.errorDescription,
+            "インターネットに接続されていません。接続を確認して再度お試しください。"
+        )
+    }
+
+    func testオフライン以外の通信エラーは汎用メッセージになる() {
+        let error = GitHubAPIError.network(URLError(.timedOut))
+        XCTAssertEqual(
+            error.errorDescription,
+            "通信に失敗しました。しばらくしてから再度お試しください。"
+        )
+    }
+
     // MARK: - Helpers
 
     private func assertSearchThrows(

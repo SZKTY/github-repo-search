@@ -25,8 +25,13 @@ public enum GitHubAPIError: Error, Equatable, LocalizedError {
             "GitHub APIの利用制限に達しました。しばらく待ってから再度お試しください。"
         case .serverError(let statusCode):
             "サーバーエラーが発生しました。(HTTP \(statusCode))"
-        case .network:
-            "通信に失敗しました。接続環境をご確認のうえ再度お試しください。"
+        case .network(let error):
+            switch error.code {
+            case .notConnectedToInternet, .networkConnectionLost, .dataNotAllowed:
+                "インターネットに接続されていません。接続を確認して再度お試しください。"
+            default:
+                "通信に失敗しました。しばらくしてから再度お試しください。"
+            }
         case .decodingFailed:
             "レスポンスの解析に失敗しました。"
         }
