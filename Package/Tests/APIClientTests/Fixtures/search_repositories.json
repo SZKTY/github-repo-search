@@ -1,0 +1,63 @@
+{
+  "total_count": 3211364,
+  "incomplete_results": false,
+  "items": [
+    {
+      "id": 44838949,
+      "name": "swift",
+      "full_name": "swiftlang/swift",
+      "owner": {
+        "login": "swiftlang",
+        "avatar_url": "https://avatars.githubusercontent.com/u/42816656?v=4"
+      },
+      "html_url": "https://github.com/swiftlang/swift",
+      "description": "The Swift Programming Language",
+      "stargazers_count": 67912,
+      "watchers_count": 67912,
+      "language": "C++",
+      "forks_count": 10391,
+      "open_issues_count": 7529,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0"
+      }
+    },
+    {
+      "id": 790019,
+      "name": "swift",
+      "full_name": "openstack/swift",
+      "owner": {
+        "login": "openstack",
+        "avatar_url": "https://avatars.githubusercontent.com/u/324574?v=4"
+      },
+      "html_url": "https://github.com/openstack/swift",
+      "description": "OpenStack Storage (Swift). Mirror of code maintained at opendev.org.",
+      "stargazers_count": 2680,
+      "watchers_count": 2680,
+      "language": "Python",
+      "forks_count": 1073,
+      "open_issues_count": 0,
+      "license": null
+    },
+    {
+      "id": 20822291,
+      "name": "SwiftGuide",
+      "full_name": "ipader/SwiftGuide",
+      "owner": {
+        "login": "ipader",
+        "avatar_url": "https://avatars.githubusercontent.com/u/373016?v=4"
+      },
+      "html_url": "https://github.com/ipader/SwiftGuide",
+      "description": null,
+      "stargazers_count": 15672,
+      "watchers_count": 15672,
+      "language": null,
+      "forks_count": 3542,
+      "open_issues_count": 0,
+      "license": {
+        "key": "mit",
+        "name": "MIT License"
+      }
+    }
+  ]
+}

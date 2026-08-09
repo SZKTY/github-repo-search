@@ -11,13 +11,26 @@ let package = Package(
     platforms: [.iOS(.v16)],
     products: [
         .library(name: "Logger", targets: ["Logger"]),
+        .library(name: "Entity", targets: ["Entity"]),
+        .library(name: "APIClient", targets: ["APIClient"]),
         .library(name: "Home", targets: ["Home"]),
+        .library(name: "RepositorySearch", targets: ["RepositorySearch"]),
+        .library(name: "RepositoryDetail", targets: ["RepositoryDetail"]),
     ],
     targets: [
         // MARK: Core
         .target(
             name: "Logger",
             path: "Sources/Core/Logger"
+        ),
+        .target(
+            name: "Entity",
+            path: "Sources/Core/Entity"
+        ),
+        .target(
+            name: "APIClient",
+            dependencies: ["Entity"],
+            path: "Sources/Core/APIClient"
         ),
 
         // MARK: Scene
@@ -26,12 +39,35 @@ let package = Package(
             dependencies: ["Logger"],
             path: "Sources/Scene/Home"
         ),
+        .target(
+            name: "RepositorySearch",
+            dependencies: ["Entity", "APIClient"],
+            path: "Sources/Scene/RepositorySearch"
+        ),
+        .target(
+            name: "RepositoryDetail",
+            dependencies: ["Entity"],
+            path: "Sources/Scene/RepositoryDetail"
+        ),
 
         // MARK: Tests
         .testTarget(
             name: "LoggerTests",
             dependencies: ["Logger"],
             path: "Tests/LoggerTests"
+        ),
+        .testTarget(
+            name: "APIClientTests",
+            dependencies: ["APIClient", "Entity"],
+            path: "Tests/APIClientTests",
+            resources: [
+                .copy("Fixtures")
+            ]
+        ),
+        .testTarget(
+            name: "RepositorySearchTests",
+            dependencies: ["RepositorySearch", "APIClient", "Entity"],
+            path: "Tests/RepositorySearchTests"
         ),
     ]
 )
