@@ -59,6 +59,17 @@
                ReferencedContainer = "container:Package">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "RepositorySearchTests"
+               BuildableName = "RepositorySearchTests"
+               BlueprintName = "RepositorySearchTests"
+               ReferencedContainer = "container:Package">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

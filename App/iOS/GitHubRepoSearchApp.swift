@@ -1,3 +1,5 @@
+import Entity
+import RepositoryDetail
 import RepositorySearch
 import SwiftUI
 
@@ -7,6 +9,9 @@ struct GitHubRepoSearchApp: App {
         WindowGroup {
             NavigationStack {
                 RepositorySearchView()
+                    .navigationDestination(for: Repository.self) { repository in
+                        RepositoryDetailView(repository: repository)
+                    }
             }
         }
     }
