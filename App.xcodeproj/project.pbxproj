@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CA998C627766237F2232BEB /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = 110F2A7ACF9C38974920D5FD /* Home */; };
+		1CA998C627766237F2232BEB /* RepositorySearch in Frameworks */ = {isa = PBXBuildFile; productRef = 110F2A7ACF9C38974920D5FD /* RepositorySearch */; };
 		3CF71FB697D7C1AEEA144E67 /* GitHubRepoSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8F02711B5AA2585F54EF9 /* GitHubRepoSearchApp.swift */; };
 		B68FC74DCB6D4EE0DA078D07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2F85005D1D464E715997 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -24,7 +24,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CA998C627766237F2232BEB /* Home in Frameworks */,
+				1CA998C627766237F2232BEB /* RepositorySearch in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			);
 			name = App;
 			packageProductDependencies = (
-				110F2A7ACF9C38974920D5FD /* Home */,
+				110F2A7ACF9C38974920D5FD /* RepositorySearch */,
 			);
 			productName = App;
 			productReference = 49D88A349FD70A9153DD2C03 /* App.app */;
@@ -324,9 +324,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		110F2A7ACF9C38974920D5FD /* Home */ = {
+		110F2A7ACF9C38974920D5FD /* RepositorySearch */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Home;
+			productName = RepositorySearch;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

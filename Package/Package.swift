@@ -14,6 +14,7 @@ let package = Package(
         .library(name: "Entity", targets: ["Entity"]),
         .library(name: "APIClient", targets: ["APIClient"]),
         .library(name: "Home", targets: ["Home"]),
+        .library(name: "RepositorySearch", targets: ["RepositorySearch"]),
     ],
     targets: [
         // MARK: Core
@@ -36,6 +37,11 @@ let package = Package(
             name: "Home",
             dependencies: ["Logger"],
             path: "Sources/Scene/Home"
+        ),
+        .target(
+            name: "RepositorySearch",
+            dependencies: ["Entity", "APIClient"],
+            path: "Sources/Scene/RepositorySearch"
         ),
 
         // MARK: Tests
