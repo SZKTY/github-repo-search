@@ -20,7 +20,7 @@ public final class RepositorySearchViewModel: ObservableObject {
             }
         }
     }
-    /// 通信ステータス
+    /// 状態
     @Published public private(set) var state: State = .idle
     /// 直近に検索を実行したクエリ(結果ヘッダーの表示用)
     @Published public private(set) var submittedQuery: String?
