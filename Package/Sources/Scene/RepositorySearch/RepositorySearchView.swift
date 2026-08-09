@@ -61,7 +61,19 @@ public struct RepositorySearchView: View {
         List {
             Section {
                 ForEach(repositories) { repository in
-                    RepositoryRowView(repository: repository)
+                    NavigationLink(value: repository) {
+                        RepositoryRowView(repository: repository)
+                    }
+                    .task {
+                        await viewModel.loadMoreIfNeeded(current: repository)
+                    }
+                }
+                if viewModel.isLoadingMore {
+                    ProgressView()
+                        // 一度消えたインジケータが再表示時にアニメーションしないため、毎回別ビューとして生成させる
+                        .id(UUID())
+                        .frame(maxWidth: .infinity)
+                        .listRowSeparator(.hidden)
                 }
             } header: {
                 Text("「\(viewModel.submittedQuery ?? "")」の検索結果 \(totalCount.formatted())件")
