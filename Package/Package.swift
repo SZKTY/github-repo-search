@@ -11,6 +11,8 @@ let package = Package(
     platforms: [.iOS(.v16)],
     products: [
         .library(name: "Logger", targets: ["Logger"]),
+        .library(name: "Entity", targets: ["Entity"]),
+        .library(name: "APIClient", targets: ["APIClient"]),
         .library(name: "Home", targets: ["Home"]),
     ],
     targets: [
@@ -18,6 +20,15 @@ let package = Package(
         .target(
             name: "Logger",
             path: "Sources/Core/Logger"
+        ),
+        .target(
+            name: "Entity",
+            path: "Sources/Core/Entity"
+        ),
+        .target(
+            name: "APIClient",
+            dependencies: ["Entity"],
+            path: "Sources/Core/APIClient"
         ),
 
         // MARK: Scene
@@ -32,6 +43,14 @@ let package = Package(
             name: "LoggerTests",
             dependencies: ["Logger"],
             path: "Tests/LoggerTests"
+        ),
+        .testTarget(
+            name: "APIClientTests",
+            dependencies: ["APIClient", "Entity"],
+            path: "Tests/APIClientTests",
+            resources: [
+                .copy("Fixtures")
+            ]
         ),
     ]
 )
